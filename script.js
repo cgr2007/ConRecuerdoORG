@@ -22,11 +22,6 @@ document.querySelector("#contact-form").addEventListener("submit", (event) => {
   event.preventDefault();
 
   const status = document.querySelector("#form-status");
-  if (!CONTACT_EMAIL) {
-    status.textContent = "El correo de contacto aún no está configurado. Añádelo en script.js para poder preparar el envío.";
-    return;
-  }
-
   const formData = new FormData(event.currentTarget);
   const subject = encodeURIComponent(`Consulta desde la web de Con Recuerdos: ${formData.get("name")}`);
   const body = encodeURIComponent(
