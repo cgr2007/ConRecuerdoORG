@@ -1,5 +1,4 @@
-// Añade aquí un correo real para habilitar el envío del formulario desde el cliente de correo.
-const CONTACT_EMAIL = "";
+const CONTACT_EMAIL = "cgrpages@gmail.com";
 
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector("#main-nav");
