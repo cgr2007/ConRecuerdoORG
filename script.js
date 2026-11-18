@@ -3,7 +3,7 @@ const EMAILJS_SERVICE_ID = "service_rorf8ly";
 const EMAILJS_TEMPLATE_ID = "template_stxo17c";
 const EMAILJS_PUBLIC_KEY = "PHVOQi_NbyteqKrv_";
 const SEND_COOLDOWN_MS = 5 * 60 * 1000;
-const LAST_SEND_KEY = "con-recuerdos-last-contact-attempt";
+const LAST_SEND_KEY = "con-recuerdos-last-successful-send";
 let lastSuccessfulSendAt = 0;
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -55,7 +55,6 @@ contactForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    localStorage.setItem(LAST_SEND_KEY, String(Date.now()));
   } catch (error) {
     console.error("No se pudo activar el límite de envíos:", error);
     status.textContent = "Este navegador no permite guardar el límite de envíos; no se ha enviado el mensaje.";
@@ -84,7 +83,8 @@ contactForm.addEventListener("submit", async (event) => {
     });
 
     if (!response.ok) {
-      throw new Error(`EmailJS respondió con HTTP ${response.status}: ${await response.text()}`);
+      const detail = await response.text();
+      throw new Error(`EmailJS respondió con HTTP ${response.status}: ${detail}`);
     }
 
     form.reset();
@@ -100,7 +100,8 @@ contactForm.addEventListener("submit", async (event) => {
     status.textContent = "Tu mensaje se ha enviado correctamente. Podrás enviar otro dentro de 5 minutos.";
   } catch (error) {
     console.error("No se pudo enviar el mensaje:", error);
-    status.textContent = `No se pudo confirmar el envío. Espera 5 minutos antes de volver a intentarlo, o escríbenos a ${CONTACT_EMAIL}.`;
+    const detail = error instanceof Error ? error.message : String(error);
+    status.textContent = `No se pudo enviar: ${detail}. Puedes volver a intentarlo o escribirnos a ${CONTACT_EMAIL}.`;
   } finally {
     submitButton.disabled = false;
   }
