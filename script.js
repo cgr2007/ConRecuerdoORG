@@ -75,9 +75,10 @@ contactForm.addEventListener("submit", async (event) => {
         template_id: EMAILJS_TEMPLATE_ID,
         user_id: EMAILJS_PUBLIC_KEY,
         template_params: {
-          from_name: formData.get("name"),
+          name: formData.get("name"),
+          title: formData.get("message"),
+          to_email: formData.get("email"),
           reply_to: formData.get("email"),
-          message: formData.get("message"),
         },
       }),
     });
@@ -97,7 +98,7 @@ contactForm.addEventListener("submit", async (event) => {
       return;
     }
 
-    status.textContent = "Tu mensaje se ha enviado correctamente. Podrás enviar otro dentro de 5 minutos.";
+    status.textContent = "Enviamos la confirmación a tu correo y una copia a la asociación. Podrás enviar otro mensaje dentro de 5 minutos.";
   } catch (error) {
     console.error("No se pudo enviar el mensaje:", error);
     const detail = error instanceof Error ? error.message : String(error);
