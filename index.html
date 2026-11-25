@@ -16,7 +16,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js?v=11" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="script.js?v=13" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -141,7 +143,58 @@
             <li><span aria-hidden="true">✳</span> Un entorno amable y cercano</li>
           </ul>
           <a class="button button-outline" href="#contacto">Pregúntanos por las actividades <span aria-hidden="true">↗</span></a>
-          <p class="small-note">Las actividades y horarios se acuerdan con la asociación.</p>
+          <p class="small-note">Consulta con la asociación si hay cambios puntuales en la agenda.</p>
+        </div>
+      </section>
+
+      <section class="schedule-section" aria-labelledby="schedule-title">
+        <div class="schedule-heading">
+          <div>
+            <p class="eyebrow">Nos encontramos cada semana</p>
+            <h2 id="schedule-title">Actividades y <em>horarios.</em></h2>
+          </div>
+          <p>Un espacio para compartir, participar y disfrutar a nuestro ritmo.</p>
+        </div>
+        <div class="schedule-layout">
+          <section class="weekly-schedule" aria-labelledby="weekly-title">
+            <p class="schedule-kicker">Cada semana</p>
+            <h3 id="weekly-title">Agenda semanal</h3>
+            <div id="weekly-activities">
+              <article class="weekly-activity">
+                <span class="weekly-day">Lunes</span>
+                <span class="weekly-time">10:00</span>
+                <span class="weekly-name">Memoria</span>
+              </article>
+              <article class="weekly-activity">
+                <span class="weekly-day">Miércoles</span>
+                <span class="weekly-time">16:00</span>
+                <span class="weekly-name">Manualidades</span>
+              </article>
+            </div>
+            <p class="schedule-note" id="weekly-schedule-note">¿Quieres participar? <a href="#contacto">Hablemos</a> y te contamos cómo.</p>
+          </section>
+          <section class="monthly-schedule" aria-labelledby="month-title">
+            <div class="calendar-heading">
+              <h3 id="month-title" aria-live="polite"></h3>
+              <div class="calendar-controls" aria-label="Cambiar de mes">
+                <button class="calendar-button" id="previous-month" type="button" aria-label="Mes anterior">←</button>
+                <button class="calendar-button" id="next-month" type="button" aria-label="Mes siguiente">→</button>
+              </div>
+            </div>
+            <div class="calendar-grid" role="grid" aria-labelledby="month-title">
+              <div class="calendar-weekdays" role="row">
+                <span class="calendar-weekday" role="columnheader">Lun</span>
+                <span class="calendar-weekday" role="columnheader">Mar</span>
+                <span class="calendar-weekday" role="columnheader">Mié</span>
+                <span class="calendar-weekday" role="columnheader">Jue</span>
+                <span class="calendar-weekday" role="columnheader">Vie</span>
+                <span class="calendar-weekday" role="columnheader">Sáb</span>
+                <span class="calendar-weekday" role="columnheader">Dom</span>
+              </div>
+              <div class="calendar-days" id="calendar-days"></div>
+            </div>
+            <p class="calendar-status" id="calendar-status" role="status" aria-live="polite"></p>
+          </section>
         </div>
       </section>
 
@@ -197,6 +250,7 @@
         <span class="brand-name">con <strong>recuerdos</strong></span>
       </a>
       <p>Una asociación que acompaña con cariño.</p>
+      <a href="admin.html">Administración</a>
       <a href="#inicio">Volver arriba ↑</a>
       <span class="footer-legal">Con Recuerdos · Asociación sin ánimo de lucro</span>
     </footer>

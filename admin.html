@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Acceso privado para gestionar las actividades de Con Recuerdos." />
+    <title>Administración | Con Recuerdos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="admin.js?v=1" defer></script>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#admin-content">Saltar al contenido</a>
+    <header class="site-header admin-header">
+      <a class="brand" href="index.html" aria-label="Con Recuerdos, inicio">
+        <span class="brand-mark" aria-hidden="true">c<span>+</span></span>
+        <span class="brand-name">con <strong>recuerdos</strong></span>
+      </a>
+      <a class="admin-back" href="index.html">Volver a la web <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="admin-main" id="admin-content">
+      <p class="eyebrow">Acceso para el equipo</p>
+      <h1>Gestionar <em>actividades.</em></h1>
+      <p class="admin-intro">Inicia sesión para publicar actividades en el calendario de Con Recuerdos.</p>
+      <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+
+      <section class="admin-card" id="login-panel" aria-labelledby="login-title">
+        <h2 id="login-title">Iniciar sesión</h2>
+        <form class="admin-form" id="login-form">
+          <label for="admin-email">Correo electrónico</label>
+          <input id="admin-email" name="email" type="email" autocomplete="username" required />
+          <label for="admin-password">Contraseña</label>
+          <input id="admin-password" name="password" type="password" autocomplete="current-password" required />
+          <button class="button button-primary" type="submit">Entrar <span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" id="management-panel" aria-labelledby="management-title" hidden>
+        <div class="admin-dashboard-heading">
+          <h2 id="management-title">Nueva actividad</h2>
+          <button class="button button-outline" id="sign-out" type="button">Cerrar sesión</button>
+        </div>
+        <form class="admin-card admin-form" id="activity-form">
+          <label for="activity-title">Nombre de la actividad</label>
+          <input id="activity-title" name="title" type="text" maxlength="100" required />
+          <div class="admin-date-fields">
+            <div>
+              <label for="activity-date">Día</label>
+              <input id="activity-date" name="date" type="date" required />
+            </div>
+            <div>
+              <label for="activity-time">Hora</label>
+              <input id="activity-time" name="time" type="time" required />
+            </div>
+          </div>
+          <label class="admin-checkbox" for="activity-repeat">
+            <input id="activity-repeat" name="repeat" type="checkbox" />
+            <span>Repetir cada semana desde este día</span>
+          </label>
+          <label for="activity-description">Detalles (opcional)</label>
+          <textarea id="activity-description" name="description" rows="3" maxlength="500"></textarea>
+          <button class="button button-primary" type="submit">Añadir al calendario <span aria-hidden="true">↗</span></button>
+        </form>
+
+        <div class="admin-activity-heading">
+          <h2>Próximas actividades</h2>
+          <button class="text-link admin-refresh" id="refresh-activities" type="button">Actualizar lista</button>
+        </div>
+        <ul class="admin-activity-list" id="admin-activities" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>

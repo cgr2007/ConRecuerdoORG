@@ -98,6 +98,43 @@ h1 em, h2 em { color: var(--green); font-weight: 400; }
 .button-outline:hover { color: white; background: var(--green); border-color: var(--green); }
 .small-note { margin: 12px 0 0; color: var(--muted); font-size: 9px; line-height: 1.5; }
 
+.schedule-section { width: min(1140px, calc(100% - 96px)); margin: auto; padding: 112px 0 120px; }
+.schedule-heading { margin-bottom: 38px; display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+.schedule-heading .eyebrow { margin-bottom: 15px; }
+.schedule-heading h2 { margin: 0; font-size: clamp(3rem, 5vw, 4.7rem); line-height: 1; }
+.schedule-heading h2 em { color: var(--green); font-weight: 400; }
+.schedule-heading > p { max-width: 290px; margin: 0 0 5px; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.schedule-layout { display: grid; grid-template-columns: .78fr 1.22fr; border: 1px solid var(--line); background: var(--cream); }
+.weekly-schedule { padding: 34px 32px; background: #e9ece2; }
+.schedule-kicker { margin-bottom: 8px; color: var(--green); font-size: 9px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.weekly-schedule h3, .monthly-schedule h3 { margin: 0; font-family: var(--serif); font-size: 27px; font-weight: 400; }
+.weekly-activity { min-height: 65px; padding: 13px 0; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; border-bottom: 1px solid #d3dbd0; }
+.weekly-schedule h3 + #weekly-activities { margin-top: 21px; }
+.weekly-empty { margin: 0; padding: 14px 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.weekly-day { color: var(--ink); font-size: 12px; font-weight: 600; text-transform: capitalize; }
+.weekly-time { grid-column: 2; grid-row: 1 / span 2; color: var(--green-dark); font-size: 12px; font-weight: 700; }
+.weekly-name { color: var(--muted); font-size: 11px; }
+.schedule-note { margin: 23px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+.schedule-note a { color: var(--green-dark); font-weight: 700; text-underline-offset: 3px; }
+.monthly-schedule { padding: 29px 32px 32px; }
+.calendar-heading { margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.calendar-controls { display: flex; gap: 7px; }
+.calendar-button { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--green-dark); background: transparent; cursor: pointer; font-size: 16px; }
+.calendar-button:hover, .calendar-button:focus-visible { color: white; background: var(--green); border-color: var(--green); }
+.calendar-weekdays, .calendar-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.calendar-weekday { padding: 9px 2px; color: var(--muted); font-size: 9px; font-weight: 700; text-align: center; }
+.calendar-days { display: grid; }
+.calendar-day { min-height: 77px; padding: 7px 5px; border-top: 1px solid var(--line); border-right: 1px solid var(--line); }
+.calendar-day:last-child { border-right: 0; }
+.calendar-day.is-outside { background: #f7f6f1; }
+.calendar-day.is-outside .calendar-date { color: #aab0a7; }
+.calendar-day.is-today { background: #edf2e9; }
+.calendar-date { width: 22px; height: 22px; margin: 0 auto 4px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); font-size: 10px; }
+.calendar-day.is-today .calendar-date { color: white; background: var(--green); }
+.calendar-event { margin-top: 3px; padding: 3px 4px; display: block; border-radius: 2px; color: var(--green-dark); background: #e5ecdf; font-size: 8px; line-height: 1.35; overflow-wrap: anywhere; }
+.calendar-event-time { display: block; font-weight: 700; }
+.calendar-status { min-height: 14px; margin: 12px 0 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
+
 .family-section { padding-top: 126px; padding-bottom: 130px; }
 .family-heading { max-width: 760px; }
 .family-heading h2 { font-size: clamp(3rem, 6vw, 5.5rem); }
@@ -131,6 +168,41 @@ h1 em, h2 em { color: var(--green); font-weight: 400; }
 .site-footer > p, .site-footer > a:not(.brand) { margin: 0; color: var(--muted); font-size: 10px; text-decoration: none; }
 .footer-legal { color: #8a938b; font-size: 9px; }
 
+.admin-page { min-height: 100vh; display: flex; flex-direction: column; }
+.admin-page [hidden] { display: none !important; }
+.admin-header { flex: 0 0 auto; }
+.admin-back { color: var(--green-dark); font-size: 11px; font-weight: 600; text-decoration: none; }
+.admin-back span { padding-left: 7px; }
+.admin-main { width: min(660px, calc(100% - 48px)); margin: 0 auto; padding: 82px 0 110px; flex: 1; }
+.admin-main > .eyebrow { margin-bottom: 14px; }
+.admin-main h1 { margin: 0 0 17px; font-size: clamp(3rem, 7vw, 5rem); line-height: .98; }
+.admin-main h1 em { color: var(--green); font-weight: 400; }
+.admin-intro { max-width: 470px; margin-bottom: 20px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.admin-status { min-height: 20px; margin: 0 0 13px; color: var(--green-dark); font-size: 11px; line-height: 1.6; }
+.admin-status.is-error { color: #9c422f; }
+.admin-card { padding: 28px; border: 1px solid var(--line); background: var(--cream); }
+.admin-card h2, .admin-dashboard-heading h2, .admin-activity-heading h2 { margin: 0; font-family: var(--serif); font-size: 26px; font-weight: 400; }
+.admin-form { display: grid; gap: 11px; }
+.admin-form label { margin-top: 5px; font-size: 11px; font-weight: 600; }
+.admin-form input:not([type="checkbox"]), .admin-form textarea { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 2px; color: var(--ink); background: white; font: inherit; font-size: 13px; }
+.admin-form input:focus, .admin-form textarea:focus { outline: 2px solid #91a694; outline-offset: 1px; }
+.admin-form textarea { resize: vertical; }
+.admin-form .button { width: max-content; margin-top: 8px; }
+.admin-dashboard { display: grid; gap: 30px; }
+.admin-dashboard-heading, .admin-activity-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.admin-date-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.admin-date-fields > div { display: grid; gap: 11px; }
+.admin-checkbox { display: flex; align-items: center; gap: 10px; color: var(--ink); cursor: pointer; }
+.admin-checkbox input { width: 16px; height: 16px; margin: 0; accent-color: var(--green); }
+.admin-activity-list { margin: -17px 0 0; padding: 0; display: grid; list-style: none; }
+.admin-activity-item { padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--line); }
+.admin-activity-date { margin: 0 0 5px; color: var(--muted); font-size: 10px; text-transform: capitalize; }
+.admin-activity-details h3 { margin: 0; font-size: 13px; font-weight: 600; }
+.admin-activity-details > p:not(.admin-activity-date) { margin: 6px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+.admin-delete { padding: 8px 0 8px 12px; border: 0; color: #9c422f; background: transparent; cursor: pointer; font-size: 10px; font-weight: 600; }
+.admin-activity-empty { padding: 16px 0; color: var(--muted); font-size: 12px; }
+.admin-refresh { padding: 8px 0; border: 0; background: transparent; cursor: pointer; }
+
 @media (min-width: 1500px) {
   .hero { min-height: 700px; }
   .hero-visual { height: 520px; }
@@ -153,10 +225,17 @@ h1 em, h2 em { color: var(--green); font-weight: 400; }
   .support-section { padding-top: 100px; padding-bottom: 105px; grid-template-columns: 1fr; gap: 35px; }
   .support-content { padding-top: 0; }
   .activity-copy { padding: 75px 40px 65px 55px; }
+  .schedule-section { width: min(100% - 48px, 720px); padding: 90px 0; }
+  .schedule-layout { grid-template-columns: .85fr 1.15fr; }
+  .weekly-schedule { padding: 27px 22px; }
+  .monthly-schedule { padding: 24px 20px; }
+  .calendar-day { min-height: 72px; padding-right: 3px; padding-left: 3px; }
+  .calendar-event { padding: 3px 2px; font-size: 7px; }
   .contact-section { padding-right: 40px; padding-left: 40px; }
   .contact-inner { gap: 7%; }
   .contact-form { padding: 22px; }
   .site-footer { padding: 22px 0; }
+  .admin-main { padding: 70px 0 90px; }
 }
 
 @media (max-width: 620px) {
@@ -194,6 +273,20 @@ h1 em, h2 em { color: var(--green); font-weight: 400; }
   .image-sticker { width: 88px; height: 88px; right: 18px; bottom: -27px; font-size: 14px; }
   .activity-copy { padding: 68px 24px 60px; }
   .activity-copy h2 { margin-bottom: 17px; }
+  .schedule-section { width: calc(100% - 40px); padding: 76px 0 82px; }
+  .schedule-heading { margin-bottom: 25px; align-items: flex-start; flex-direction: column; gap: 13px; }
+  .schedule-heading h2 { font-size: clamp(2.8rem, 12vw, 4rem); }
+  .schedule-heading > p { font-size: 11px; }
+  .schedule-layout { grid-template-columns: 1fr; }
+  .weekly-schedule { padding: 25px 22px; }
+  .weekly-activity { min-height: 59px; }
+  .monthly-schedule { padding: 23px 12px 17px; }
+  .calendar-heading { margin-bottom: 12px; }
+  .monthly-schedule h3 { font-size: 23px; }
+  .calendar-weekday { font-size: 8px; }
+  .calendar-day { min-height: 70px; padding: 5px 2px; }
+  .calendar-date { width: 20px; height: 20px; font-size: 9px; }
+  .calendar-event { padding: 2px 1px; font-size: 6px; line-height: 1.25; }
   .family-section { padding-top: 80px; padding-bottom: 85px; }
   .family-bottom { margin-top: 22px; gap: 18px; }
   .family-bottom > p { font-size: 12px; }
@@ -207,6 +300,13 @@ h1 em, h2 em { color: var(--green); font-weight: 400; }
   .site-footer { justify-content: space-between; gap: 14px; }
   .site-footer > p { width: calc(100% - 170px); text-align: right; }
   .footer-legal { width: 100%; }
+  .admin-main { width: calc(100% - 40px); padding: 60px 0 76px; }
+  .admin-main h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .admin-card { padding: 21px; }
+  .admin-dashboard-heading, .admin-activity-heading { align-items: flex-start; }
+  .admin-dashboard-heading { flex-direction: column; }
+  .admin-date-fields { grid-template-columns: 1fr; gap: 0; }
+  .admin-activity-item { align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
